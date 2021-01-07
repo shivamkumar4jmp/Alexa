@@ -12,10 +12,9 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-
 def talk(text):
     engine.say(text)
-    # engine.say('What can I do for you')
+    
     engine.runAndWait()
 
 def take_command():
@@ -32,7 +31,7 @@ def take_command():
         pass
     return command
 
-def run_alexa():
+def run_siri():
     command = take_command()
     print(command)
     if 'play' in command:
@@ -54,13 +53,11 @@ def run_alexa():
         talk('no, I am in a relationship with Internet')
     elif 'joke' in command:
         talk(pyjokes.get_joke())
-    # elif 'rishika' in command:
-    #     talk('Rishika is very innocent and cute girl. born in munger on 29 october 1998. Rishika boyfriend is shivam kumar who is little bit mental')
-    else:
+        else:
         talk('I can not understand please repeat again')
 
 
 
 
 while True:
-    run_alexa()
+    run_siri()
